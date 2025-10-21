@@ -8,12 +8,12 @@ jun : ---
 </code></pre><h4>실행 결과 예시</h4><pre><code data-highlighted="yes" class="hljs language-ada">경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)
 pobi,woni,jun
 시도할 횟수는 몇 회인가요?
-<span class="hljs-number">5</span>
+5
 
 실행 결과
 pobi : -
 woni :
-<span class="hljs-type">jun</span> : -
+jun : -
 
 pobi : --
 woni : -
