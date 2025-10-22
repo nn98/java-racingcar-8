@@ -11,17 +11,17 @@ public class CarTest {
     @DisplayName("이동_성공")
     void move_success() {
         Car car = new Car("pobi", 0);
-        long hashCode = car.hashCode();
+        String original = car.toString();
         car.move(4);
-        assertThat(car.hashCode()).isNotEqualTo(hashCode);
+        assertThat(car.toString()).doesNotHaveToString(original);
     }
 
     @Test
     @DisplayName("부동_성공")
     void hold_success() {
         Car car = new Car("pobi", 0);
-        long hashCode = car.hashCode();
-        car.move(0);
-        assertThat(car.hashCode()).isEqualTo(hashCode);
+        String original = car.toString();
+        car.move(4);
+        assertThat(car.toString()).hasToString(original);
     }
 }
