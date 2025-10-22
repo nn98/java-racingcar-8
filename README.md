@@ -117,13 +117,18 @@
 > /
 > > domain
 > > > entity
-> > > > `Car`  
+> > > > `Car`
+> > >
 > > > vo
 > > > > `CarList`
+> > >
 > > > service
-> > > > `RacingService`
+> > > > `RacingService`  
+> > > > `CarParser`
+> > >
 > > > impl
-> > > > `RacingServiceImpl`
+> > > > `RacingServiceImpl`  
+> > > > `CarParserImpl`
 > >
 > > presentation
 > > > view
@@ -164,9 +169,11 @@
 │  │
 │  ├─service
 │  │      RacingService.java
+│  │      CarParser.java
 │  │
 │  └─impl
 │          RacingServiceImpl.java
+│          CarParserImpl.java
 │
 └─presentation
 ├─view
@@ -175,5 +182,4 @@
 │
 └─controller
 RacingController.java
-
 ```
