@@ -2,6 +2,13 @@
 
 ---
 
+# 🏆 도전
+
+- ### TDD
+    - DDD와 더불어 정리한 기능 목록으로 테스트 먼저 구현하기
+- ### DDD
+    - [이전 프로젝트](https://github.com/nn98/Mind_bridge/tree/layered_DDD)에서 MVC ➡️ DDD 시도 중 구조만 변경하고 보류했던걸 재활용해보기
+
 ## 💡 요구사항
 
 ### ❗ 코딩
@@ -14,7 +21,6 @@
 ### ❗ 테스트
 
 - [ ] JUnit 5와 AssertJ를 이용하여 정리한 기능 목록이 정상적으로 작동하는지 테스트 코드로 확인한다.
--
 
 ### ❗ 의존성
 
@@ -106,3 +112,26 @@
 
 ---
 
+## 📜 설계
+
+> /
+> > domain
+> > > `Car`  
+> `CarList`  
+> `RacingService`
+> >
+> > presentation
+> > > view
+> > > > `InputView`  
+> > > > `OutputView`
+> > >
+> > > controller
+> > > > RacingController
+> >
+> > common
+> > > constant
+> > > > `Message`  
+> `Value`
+> > >
+> > > exception
+> > > > `IllegalArgumentException`
