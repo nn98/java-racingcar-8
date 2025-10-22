@@ -8,5 +8,6 @@ public class CarList {
     }
 
     public String statusToString() {
+        return "";
     }
 }

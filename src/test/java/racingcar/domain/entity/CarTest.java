@@ -21,7 +21,7 @@ public class CarTest {
     void hold_success() {
         Car car = new Car("pobi", 0);
         String original = car.toString();
-        car.move(4);
+        car.move(0);
         assertThat(car.toString()).hasToString(original);
     }
 }
