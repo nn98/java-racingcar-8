@@ -116,9 +116,14 @@
 
 > /
 > > domain
-> > > `Car`  
-> > > `CarList`  
-> > > `RacingService`
+> > > entity
+> > > > `Car`  
+> > > vo
+> > > > `CarList`
+> > > service
+> > > > `RacingService`
+> > > impl
+> > > > `RacingServiceImpl`
 > >
 > > presentation
 > > > view
@@ -126,12 +131,49 @@
 > > > > `OutputView`
 > > >
 > > > controller
-> > > > RacingController
+> > > > `RacingController`
 > >
 > > common
 > > > constant
 > > > > `Message`  
-> `Value`
+> > > > `Value`
 > > >
 > > > exception
 > > > > `IllegalArgumentException`
+
+- ### cmd에서 `tree /f`를 실행하면 보기 좋고 편하게 구조를 도식화 가능
+
+```json
+└─racingcar
+│  Application.java
+│
+├─common
+│  ├─constant
+│  │      Message.java
+│  │      Value.java
+│  │
+│  └─exception
+│          IllegalArgumentException.java
+│
+├─domain
+│  ├─vo
+│  │      CarList.java
+│  │
+│  ├─entity
+│  │      Car.java
+│  │
+│  ├─service
+│  │      RacingService.java
+│  │
+│  └─impl
+│          RacingServiceImpl.java
+│
+└─presentation
+├─view
+│      InputView.java
+│      OutputView.java
+│
+└─controller
+RacingController.java
+
+```
