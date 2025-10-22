@@ -9,6 +9,8 @@
 - ### DDD
     - [이전 프로젝트](https://github.com/nn98/Mind_bridge/tree/layered_DDD)에서 MVC ➡️ DDD 시도 중 구조만 변경하고 보류했던걸 재활용해보기
 
+---
+
 ## 💡 요구사항
 
 ### ❗ 코딩
@@ -95,6 +97,9 @@
         - [ ] private void moveCars() - 주어진 횟수 동안 자동차들을 전진 혹은 정지
         - [ ] private boolean isMove() - 0에서 9 사이의 무작위 값`pickNumberInRange()`이 4 이상일 경우 move 리턴
         - `❓랜덤값으로 움직임이 결정되는데 테스트를 구현할 방법이?`
+            - [ ] `moveCars()`가 int를 매개변수로 받아 동작하게 구현하면 가능.
+            - [ ] private를 풀고 동작 여부를 확인 가능하도록?
+            - [ ] Car 도 엔티티니 Car 내부 동작으로 구현?
         - [ ] public String getWinners() - 주어진 횟수 소진 후 최종 전진 거리를 비교해 승자 목록 리턴
     - [ ] 
 
