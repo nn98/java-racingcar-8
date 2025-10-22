@@ -1,4 +1,4 @@
 package racingcar.domain.service;
 
-public class RacingServiceTest {
+public class CarParserTest {
 }
