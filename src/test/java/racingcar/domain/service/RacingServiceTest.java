@@ -1,4 +1,4 @@
-package racingcar.domain.impl;
+package racingcar.domain.service;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -7,12 +7,11 @@ import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.domain.entity.Car;
-import racingcar.domain.service.RacingService;
 import racingcar.domain.vo.CarList;
 
-public class RacingServiceImplTest {
+public class RacingServiceTest {
 
-    private final RacingService racingService = new RacingServiceImpl(new String[]{"pobi", "woni", "jun"});
+    private final RacingService racingService = new RacingService(new String[]{"pobi", "woni", "jun"});
 
     @Test
     @DisplayName("차량목록생성_성공")
