@@ -1,4 +1,4 @@
-package racingcar.domain.service;
+package racingcar.domain.impl;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
@@ -6,9 +6,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.common.exception.IllegalArgumentException;
-import racingcar.domain.impl.CarParserImpl;
+import racingcar.domain.service.CarParser;
 
-public class CarParserTest {
+public class CarParserImplTest {
 
     @Test
     @DisplayName("파싱_성공")
