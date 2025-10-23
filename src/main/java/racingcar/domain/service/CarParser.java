@@ -1,6 +1,9 @@
 package racingcar.domain.service;
 
-public interface CarParser {
+public class CarParser {
 
-    String[] parseCar(String s);
+    public String[] parseCar(String s) {
+        return new String[0];
+    }
+
 }
