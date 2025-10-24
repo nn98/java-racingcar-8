@@ -1,5 +1,6 @@
 package racingcar.presentation.view;
 
+import static camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import camp.nextstep.edu.missionutils.test.NsTest;
@@ -14,8 +15,12 @@ public class InputViewTest extends NsTest {
     @Test
     @DisplayName("사용자_입력_성공")
     void user_input_success() {
-        run("pobi,jun", "1");
-        assertThat(result).isEqualTo("pobi,jun");
+        assertSimpleTest(
+                () -> {
+                    run("pobi,jun", "1");
+                    assertThat(result).isEqualTo("pobi,jun");
+                }
+        );
     }
 
     @Override
