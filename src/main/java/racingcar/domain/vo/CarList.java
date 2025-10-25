@@ -7,34 +7,32 @@ import racingcar.domain.entity.Car;
 
 public class CarList {
 
-    private final List<Car> carList;
+    private final List<Car> cars;
 
     public CarList(String[] cars) {
-        this.carList = getCarList(cars);
+        this.cars = getCarList(cars);
     }
 
     private List<Car> getCarList(String[] cars) {
-        List<Car> carList = new ArrayList<>();
+        List<Car> list = new ArrayList<>();
         for (String carName : cars) {
             Car car = new Car(carName, 0);
-            carList.add(car);
+            list.add(car);
         }
-        return carList;
+        return list;
     }
 
     public String statusToString() {
-        String status = carList.stream()
+        return cars.stream()
                 .map(Car::toString)
                 .collect(Collectors.joining("\n"));
-        return status;
     }
 
     public int getMaxPosition() {
-        int maxPosition = carList.stream()
+        return cars.stream()
                 .mapToInt(Car::getPosition)
                 .max()
                 .orElse(0);
-        return maxPosition;
     }
 
 }
