@@ -3,7 +3,7 @@ package racingcar.domain.entity;
 public class Car {
 
     private final String carName;
-    private final int position;
+    private int position;
 
     public Car(String carName, int position) {
         this.carName = carName;
@@ -11,6 +11,9 @@ public class Car {
     }
 
     public void move(int randomValue) {
+        if (randomValue >= 4) {
+            this.position += 1;
+        }
     }
 
     @Override
