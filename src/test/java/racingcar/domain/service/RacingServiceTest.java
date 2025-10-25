@@ -13,7 +13,7 @@ public class RacingServiceTest {
     @Test
     @DisplayName("차량목록생성_성공")
     void saveCarList_success() {
-        String[] cars = {"pibi", "woni", "jun"};
+        String[] cars = {"pobi", "woni", "jun"};
         CarList carListTest = new CarList(cars);
         assertThat(racingService.saveCarList()).isEqualTo(carListTest);
     }

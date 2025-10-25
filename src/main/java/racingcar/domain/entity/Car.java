@@ -1,5 +1,7 @@
 package racingcar.domain.entity;
 
+import java.util.Objects;
+
 public class Car {
 
     private final String carName;
@@ -33,4 +35,18 @@ public class Car {
         return carName;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Car car = (Car) o;
+        return position == car.position && Objects.equals(carName, car.carName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(carName, position);
+    }
+    
 }

@@ -2,6 +2,7 @@ package racingcar.domain.vo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 import racingcar.domain.entity.Car;
 
@@ -41,6 +42,20 @@ public class CarList {
                 .mapToInt(Car::getPosition)
                 .max()
                 .orElse(0);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        CarList carList = (CarList) o;
+        return Objects.equals(cars, carList.cars);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(cars);
     }
 
 }
