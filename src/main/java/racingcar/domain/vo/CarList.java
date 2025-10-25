@@ -29,4 +29,12 @@ public class CarList {
         return status;
     }
 
+    public int getMaxPosition() {
+        int maxPosition = carList.stream()
+                .mapToInt(Car::getPosition)
+                .max()
+                .orElse(0);
+        return maxPosition;
+    }
+
 }

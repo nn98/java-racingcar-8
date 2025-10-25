@@ -22,4 +22,8 @@ public class Car {
         return String.format("%s : %s", carName, positionVisualization);
     }
 
+    public int getPosition() {
+        return position;
+    }
+
 }
