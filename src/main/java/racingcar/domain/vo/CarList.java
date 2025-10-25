@@ -2,6 +2,7 @@ package racingcar.domain.vo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import racingcar.domain.entity.Car;
 
 public class CarList {
@@ -22,12 +23,10 @@ public class CarList {
     }
 
     public String statusToString() {
-        StringBuilder status = new StringBuilder();
-        for (Car car : carList) {
-            status.append(car.toString());
-            status.append("\n");
-        }
-        return status.toString();
+        String status = carList.stream()
+                .map(Car::toString)
+                .collect(Collectors.joining("\n"));
+        return status;
     }
 
 }
