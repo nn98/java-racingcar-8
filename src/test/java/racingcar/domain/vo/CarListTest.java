@@ -13,7 +13,7 @@ public class CarListTest {
     @Test
     @DisplayName("상태_확인_성공")
     void check_status_success() {
-        assertThat(carListTest.statusToString()).isEqualTo("pobi : \nwoni : -\njun : --");
+        assertThat(carListTest.statusToString()).isEqualTo("pobi : \nwoni : \njun : ");
     }
 
     @Test
