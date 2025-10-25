@@ -22,7 +22,12 @@ public class CarList {
     }
 
     public String statusToString() {
-        return "";
+        StringBuilder status = new StringBuilder();
+        for (Car car : carList) {
+            status.append(car.toString());
+            status.append("\n");
+        }
+        return status.toString();
     }
 
 }
