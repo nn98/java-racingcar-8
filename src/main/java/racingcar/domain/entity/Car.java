@@ -13,4 +13,13 @@ public class Car {
     public void move(int randomValue) {
     }
 
+    @Override
+    public String toString() {
+        StringBuilder positionVisualization = new StringBuilder();
+        for (int i = 0; i < position; i++) {
+            positionVisualization.append("-");
+        }
+        return String.format("%s : %s", carName, positionVisualization);
+    }
+
 }
