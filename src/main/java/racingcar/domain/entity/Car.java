@@ -5,8 +5,8 @@ public class Car {
     private final String carName;
     private final int position;
 
-    public Car(String name, int position) {
-        this.carName = name;
+    public Car(String carName, int position) {
+        this.carName = carName;
         this.position = position;
     }
 
@@ -24,6 +24,10 @@ public class Car {
 
     public int getPosition() {
         return position;
+    }
+
+    public String getCarName() {
+        return carName;
     }
 
 }

@@ -19,6 +19,6 @@ public class CarListTest {
     @Test
     @DisplayName("승자_확인_성공")
     void check_winner_success() {
-        assertThat(carListTest.statusToString()).isEqualTo("pobi : \nwoni : -\njun : --");
+        assertThat(carListTest.getWinners()).isEqualTo("pobi, woni, jun");
     }
 }

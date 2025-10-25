@@ -28,6 +28,14 @@ public class CarList {
                 .collect(Collectors.joining("\n"));
     }
 
+    public String getWinners() {
+        int maxPosition = getMaxPosition();
+        return cars.stream()
+                .filter(car -> car.getPosition() == maxPosition)
+                .map(Car::getCarName)
+                .collect(Collectors.joining(", "));
+    }
+
     public int getMaxPosition() {
         return cars.stream()
                 .mapToInt(Car::getPosition)
