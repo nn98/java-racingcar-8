@@ -25,4 +25,9 @@ public class OutputView {
         }
         System.out.println(raceResult + "\n");
     }
+
+    public void noticeRaceWinner(String raceWinner) {
+        System.out.println(Message.NOTICE_RACE_WINNER + raceWinner);
+    }
+
 }
