@@ -17,14 +17,20 @@ public class RacingController {
     public void run() {
         RacingService racingService = initService();
         startRacing(racingService);
+        printWinner(racingService);
     }
 
-    public void startRacing(RacingService racingService) {
+    private void startRacing(RacingService racingService) {
         boolean countRemain = racingService.racing();
         this.outputView.noticeRaceResult(racingService.getCarStatus());
         if (countRemain) {
             startRacing(racingService);
         }
+    }
+
+    private void printWinner(RacingService racingService) {
+        String raceWinner = racingService.getRaceWinner();
+        this.outputView.noticeRaceWinner(raceWinner);
     }
 
     private RacingService initService() {
