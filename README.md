@@ -79,13 +79,13 @@
 
 `입력`
 
-- [ ] 경주할 자동차 이름 입력
-    - [ ] 쉼표`,`로 구분
-    - [ ] 5자 이하만 가능
+- [X] 경주할 자동차 이름 입력
+    - [X] 쉼표`,`로 구분
+    - [X] 5자 이하만 가능
 
 > `pobi,woni,jun`
 
-- [ ] 시도할 횟수 입력
+- [X] 시도할 횟수 입력
 
 > `5`
 
@@ -93,17 +93,17 @@
 
 `출력`
 
-- [ ] 차수별 실행 결과
+- [X] 차수별 실행 결과
 
 > pobi : --  
 > woni : ----  
 > jun : ---
 
-- [ ] 단독 우승자 안내 문구
+- [X] 단독 우승자 안내 문구
 
 > 최종 우승자 : `pobi`
 
-- [ ] 공동 우승자 안내 문구
+- [X] 공동 우승자 안내 문구
 
 > 최종 우승자 : `pobi`, jun
 
@@ -127,22 +127,21 @@
         - [X] 중복이 아님
         - [X] 길이가 5 이하임
         - [X] 이스케이프 문자가 포함되지 않음
-    - [ ] 각 자동차의 이름과 위지를 저장할 객체 생성 - `private List<Car> createCarList`
-        - [ ] `class Car`
-        - [ ] String name
-        - [ ] int position
-    - [ ] 생성한 객체들을 모아 일급 컬렉션으로 저장 - `private CarList saveCarList`
-        - [ ] `class CarList` - `❓일급 컬렉션은 불변성을 보장해야?`
-        - [ ] private List<Car> carList
-        - [ ] public String statusToString() - 자동차의 전진 상태, 자동차 이름 리턴
-        - [ ] private void moveCars() - 주어진 횟수 동안 자동차들을 전진 혹은 정지
-        - [ ] private boolean isMove() - 0에서 9 사이의 무작위 값`pickNumberInRange()`이 4 이상일 경우 move 리턴
+    - [X] 각 자동차의 이름과 위지를 저장할 객체 생성 - `private List<Car> createCarList`
+        - [X] `class Car`
+        - [X] String name
+        - [X] int position
+    - [X] 생성한 객체들을 모아 일급 컬렉션으로 저장 - `private CarList saveCarList`
+        - [X] `class CarList` - `❓일급 컬렉션은 불변성을 보장해야?`
+        - [X] private List<Car> carList
+        - [X] public String statusToString() - 자동차의 전진 상태, 자동차 이름 리턴
+        - [X] private void moveCars() - 주어진 횟수 동안 자동차들을 전진 혹은 정지
+        - [X] private boolean isMove() - 0에서 9 사이의 무작위 값`pickNumberInRange()`이 4 이상일 경우 move 리턴
         - `❓랜덤값으로 움직임이 결정되는데 테스트를 구현할 방법이?`
-            - [ ] `moveCars()`가 int를 매개변수로 받아 동작하게 구현하면 가능.
+            - [X] `move()`가 int를 매개변수로 받아 동작하게 구현하면 가능.
             - [ ] private를 풀고 동작 여부를 확인 가능하도록?
-            - [ ] Car 도 엔티티니 Car 내부 동작으로 구현?
-        - [ ] public String getWinners() - 주어진 횟수 소진 후 최종 전진 거리를 비교해 승자 목록 리턴
-    - [ ] 
+            - [x] Car 도 엔티티니 Car 내부 동작으로 구현?
+        - [X] public String getWinners() - 주어진 횟수 소진 후 최종 전진 거리를 비교해 승자 목록 리턴
 
 ### 💡 생각할 부분
 
