@@ -29,6 +29,10 @@ public class RacingService {
         return this.carList.statusToString();
     }
 
+    public String getRaceWinner() {
+        return this.carList.getWinners();
+    }
+
     public CarList saveCarList() {
         return this.carList;
     }
