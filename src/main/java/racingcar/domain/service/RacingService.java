@@ -16,11 +16,17 @@ public class RacingService {
         CarParser carParser = new CarParser();
         return carParser.parseCar(input);
     }
-    
-    private void racing() {
-        while (this.tryCount > 0) {
+
+    public boolean racing() {
+        if (this.tryCount > 0) {
+            this.carList.raceCars();
             this.tryCount -= 1;
         }
+        return this.tryCount > 0;
+    }
+
+    public String getCarStatus() {
+        return this.carList.statusToString();
     }
 
     public CarList saveCarList() {
