@@ -16,10 +16,23 @@ public class RacingController {
 
     public void run() {
         RacingService racingService = initService();
+        startRacing(racingService);
+    }
+
+    public void startRacing(RacingService racingService) {
+        boolean countRemain = racingService.racing();
+        this.outputView.noticeRaceResult(racingService.getCarStatus());
+        if (countRemain) {
+            startRacing(racingService);
+        }
     }
 
     private RacingService initService() {
-        return new RacingService(inputView.readLine(), inputView.readInt());
+        this.outputView.noticeCarName();
+        String carName = this.inputView.readLine();
+        this.outputView.noticeTryCount();
+        int tryCount = this.inputView.readInt();
+        return new RacingService(carName, tryCount);
     }
 
 }
