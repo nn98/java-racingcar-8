@@ -50,6 +50,75 @@
 - IllegalArgumentException 를 굳이굳이 따로 만들어서 쓸 이유가?
 - 없다
 
+### 💡읽기 쉬운 코드를 만들자
+
+> 내가 수월하게 읽었던 코드는?
+
+자바 내장 라이브러리 코드를 읽어보면 의외로 복잡하지 않다.
+
+```java
+public final class Objects {
+    private Objects() {
+        throw new AssertionError("No java.util.Objects instances for you!");
+    }
+
+    /**
+     * Returns {@code true} if the arguments are equal to each other
+     * and {@code false} otherwise.
+     * Consequently, if both arguments are {@code null}, {@code true}
+     * is returned.  Otherwise, if the first argument is not {@code
+     * null}, equality is determined by calling the {@link
+     * Object#equals equals} method of the first argument with the
+     * second argument of this method. Otherwise, {@code false} is
+     * returned.
+     *
+     * @param a an object
+     * @param b an object to be compared with {@code a} for equality
+     * @return {@code true} if the arguments are equal to each other
+     * and {@code false} otherwise
+     * @see Object#equals(Object)
+     */
+    public static boolean equals(Object a, Object b) {
+        return java.util.Objects.equals(a, b);
+    }
+...
+```
+
+지레 겁먹고 복잡하게 느껴질 뿐 간결하되 명확한 코드와 아주 친절하고 상세한 주석 뿐이다.  
+이 어나더레벨 개발자들도 사람일진대  
+간결하고 읽기 좋은, 나중에 까먹지 않을 코드를 작성하길 바랄 것이기에 굳이 읽기 힘들게 만들리가 없다.
+
+그렇다면 왜 나는 내 옛날 코드 하나도 리뷰하지 못하고 처음부터 다시 공부하는가?  
+개발하는 입장만을 생각하고, 리뷰하는 입장을 생각하지 못했기 때문이다.  
+사실상 경험 부족이 가장 적합한 표현일 것 같다.  
+멘토링 / TA / 프로젝트 다양한 상황에서 다른 사람들의 코드를 읽어 볼 수록  
+읽기 쉬운 코드를 작성하는 법은 몰라도  
+읽기 어려운 코드를 작성하지 않는 방법은 알 수 있었기 때문이다.
+
+그리고 그 방법들은 놀랍게도 우아코스의 [pr_checklist](https://github.com/nn98/java-racingcar-8/blob/nn98/pr_checklist.md), 클린코드 원칙과
+일맥상통하는 부분이 많았다.  
+어려울 수 있는 이 규칙들을 준수하기만 한다면 읽기 어려운 코드일 수가 없기 때문이다.
+
+나만의 어레인지를 붙이자면 `시그니처를 주석마냥 상세하게 작성하는 것` 정도가 있겠다.  
+아직까지도 시그니처 네이밍은 덜덜 떨리는 작업이지만 나만의 기준을 세우기 위해서라도
+
+- 일단 짓고
+- 아니면 바꾸고
+  의 마인드셋으로 과감하게 시도하고 있다.
+
+그 덕분이라면 덕분일지 TDD가 나름 도움도 되고 익숙해져가는 것이 느껴진다.  
+매 시그니처 수정마다 바로바로 테스트 실패를 띄워줘서 다시금 변경의 타당성을 생각하고  
+빠른 후속조치와 뒤늦은 추가 수정을 사전 방지할 수 있었기 때문.
+
+더 철저하게,
+
+- 명확한 원칙과 규칙을 체화하고
+- 나만의 기준을 세우되
+- 잘못된 습관을 개선하고
+- 다양한 참고 자료를 활용해
+- 끝없이 학습하자
+  이번 주의 삼삼한 마무리로 좋을 것 같다.
+
 ---
 
 ## 📋 요구사항
@@ -139,7 +208,7 @@
         - [X] private boolean isMove() - 0에서 9 사이의 무작위 값`pickNumberInRange()`이 4 이상일 경우 move 리턴
         - `❓랜덤값으로 움직임이 결정되는데 테스트를 구현할 방법이?`
             - [X] `move()`가 int를 매개변수로 받아 동작하게 구현하면 가능.
-            - [ ] private를 풀고 동작 여부를 확인 가능하도록?
+            - [X] 상위 클래스나 콜렉션`CarList`에서 랜덤값을 생성해서 move 호출
             - [x] Car 도 엔티티니 Car 내부 동작으로 구현?
         - [X] public String getWinners() - 주어진 횟수 소진 후 최종 전진 거리를 비교해 승자 목록 리턴
 
