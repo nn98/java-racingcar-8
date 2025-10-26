@@ -5,7 +5,7 @@ import racingcar.domain.vo.CarList;
 public class RacingService {
 
     private final CarList carList;
-    private final int tryCount;
+    private int tryCount;
 
     public RacingService(String input, int tryCount) {
         this.carList = new CarList(parseCars(input));
@@ -15,6 +15,12 @@ public class RacingService {
     private String[] parseCars(String input) {
         CarParser carParser = new CarParser();
         return carParser.parseCar(input);
+    }
+    
+    private void racing() {
+        while (this.tryCount > 0) {
+            this.tryCount -= 1;
+        }
     }
 
     public CarList saveCarList() {
