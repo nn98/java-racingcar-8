@@ -1,5 +1,9 @@
 package racingcar.domain.vo;
 
+import static racingcar.common.constant.Value.MAX_RANGE;
+import static racingcar.common.constant.Value.NIN_RANGE;
+
+import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -42,6 +46,16 @@ public class CarList {
                 .mapToInt(Car::getPosition)
                 .max()
                 .orElse(0);
+    }
+
+    public void raceCars() {
+        for (Car car : cars) {
+            car.move(generateRandomValue());
+        }
+    }
+
+    private int generateRandomValue() {
+        return Randoms.pickNumberInRange(NIN_RANGE, MAX_RANGE);
     }
 
     @Override
