@@ -8,7 +8,7 @@ import racingcar.domain.vo.CarList;
 
 public class RacingServiceTest {
 
-    private final RacingService racingService = new RacingService(new String[]{"pobi", "woni", "jun"});
+    private final RacingService racingService = new RacingService("pobi, woni, jun", 0);
 
     @Test
     @DisplayName("차량목록생성_성공")
