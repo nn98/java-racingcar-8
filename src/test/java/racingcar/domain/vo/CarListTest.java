@@ -21,4 +21,11 @@ public class CarListTest {
     void check_winner_success() {
         assertThat(carListTest.getWinners()).isEqualTo("pobi, woni, jun");
     }
+
+    @Test
+    @DisplayName("최대거리_확인_성공")
+    void check_max_position_success() {
+        assertThat(carListTest.getMaxPosition()).isZero();
+    }
+
 }
