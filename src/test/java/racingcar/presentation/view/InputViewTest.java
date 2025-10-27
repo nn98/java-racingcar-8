@@ -6,11 +6,12 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import camp.nextstep.edu.missionutils.test.NsTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-public class InputViewTest extends NsTest {
+ 
+class InputViewTest extends NsTest {
 
     private final InputView inputView = new InputView();
-    private String result;
+    private String resultString;
+    private int resultInt;
 
     @Test
     @DisplayName("사용자_입력_성공")
@@ -18,13 +19,16 @@ public class InputViewTest extends NsTest {
         assertSimpleTest(
                 () -> {
                     run("pobi,jun", "1");
-                    assertThat(result).isEqualTo("pobi,jun");
+                    assertThat(resultString).isEqualTo("pobi,jun");
+                    assertThat(resultInt).isEqualTo(1);
                 }
         );
     }
 
     @Override
     public void runMain() {
-        result = inputView.readLine();
+        resultString = inputView.readLine();
+        resultInt = inputView.readInt();
     }
+
 }

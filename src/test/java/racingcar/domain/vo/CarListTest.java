@@ -5,7 +5,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class CarListTest {
+class CarListTest {
 
     private final String[] cars = {"pobi", "woni", "jun"};
     private final CarList carListTest = new CarList(cars);

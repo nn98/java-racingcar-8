@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.domain.vo.CarList;
 
-public class RacingServiceTest {
+class RacingServiceTest {
 
     private final RacingService racingService = new RacingService("pobi, woni, jun", 0);
 
