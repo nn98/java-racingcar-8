@@ -15,6 +15,13 @@ public class RacingServiceTest {
     void saveCarList_success() {
         String[] cars = {"pobi", "woni", "jun"};
         CarList carListTest = new CarList(cars);
-        assertThat(racingService.saveCarList()).isEqualTo(carListTest);
+        assertThat(racingService.savedCarList()).isEqualTo(carListTest);
     }
+
+    @Test
+    @DisplayName("초기목록_공동우승_성공")
+    void defaultCarList_winner_success() {
+        assertThat(racingService.getRaceWinner()).isEqualTo("pobi, woni, jun");
+    }
+
 }
